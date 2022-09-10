@@ -1,0 +1,37 @@
+---
+import { SITE_TITLE } from '../config';
+import HeaderLink from './HeaderLink.astro';
+---
+
+<header>
+
+	<div class="container">
+		<nav class="flex">
+			<div class="flex-1">
+				<h1 class="text-2xl font-bold">{SITE_TITLE}</h1>
+			</div>
+			<div class="flex-1">
+				<nav class="flex justify-end">
+					<HeaderLink href="/" class="nav-item">Home</HeaderLink>
+					<HeaderLink href="/about" class="nav-item">About</HeaderLink>
+					<HeaderLink href="#" class="nav-item">Project</HeaderLink>
+					<HeaderLink href="/Blog" class="nav-item">Blog</HeaderLink>
+				</nav>
+			</div>
+			<div class="flex-1">
+				<div class="flex justify-end">
+					<HeaderLink href="#" class="button">Download Resume</HeaderLink>
+				</div>
+			</div>
+		</nav>
+	</div>
+
+</header>
+<style>
+	.nav-item {
+		@apply text-gray-600 hover:text-gray-900 px-3 py-2;
+	}
+	.button{
+		@apply border text-gray-600 border-gray-500 rounded hover:text-gray-900 px-3 py-2;
+	}
+</style>
