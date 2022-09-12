@@ -1,57 +1,123 @@
 ---
-import BaseHead from '../components/BaseHead.astro';
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
-import { SITE_TITLE, SITE_DESCRIPTION } from '../config';
+import BaseHead from "../components/BaseHead.astro";
+import Footer from "../components/Footer.astro";
+import Header from "../components/Header.astro";
+import { SITE_DESCRIPTION, SITE_TITLE } from "../config";
+import heroImage from "/placeholder-hero.jpg";
 
 // Use Astro.glob() to fetch all posts, and then sort them by date.
-const posts = (await Astro.glob('./blog/*.{md,mdx}')).sort(
-	(a, b) => new Date(b.frontmatter.pubDate).valueOf() - new Date(a.frontmatter.pubDate).valueOf()
+const posts = (await Astro.glob("./blog/*.{md,mdx}")).sort(
+  (a, b) =>
+    new Date(b.frontmatter.pubDate).valueOf() -
+    new Date(a.frontmatter.pubDate).valueOf()
 );
 ---
 
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-		<style>
-			ul {
-				list-style-type: none;
-				padding: unset;
-			}
-			ul li {
-				display: flex;
-			}
-			ul li time {
-				flex: 0 0 130px;
-				font-style: italic;
-				color: #888;
-			}
-			ul li a:visited {
-				color: #8e32dc;
-			}
-		</style>
-	</head>
-	<body>
-		<Header />
-		<main>
-			<section>
-				<ul>
-					{posts.map((post) => (
-						<li>
-							<time datetime={post.frontmatter.pubDate}>
-								{new Date(post.frontmatter.pubDate).toLocaleDateString('en-us', {
-									year: 'numeric',
-									month: 'short',
-									day: 'numeric',
-								})}
-							</time>
-							<a href={post.url}>{post.frontmatter.title}</a>
-						</li>
-					))}
-				</ul>
-			</section>
-		</main>
-		<Footer />
-	</body>
+  <head>
+    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+    <style>
+      /* ul {
+        list-style-type: none;
+        padding: unset;
+      }
+      ul li {
+        display: flex;
+      }
+      ul li time {
+        flex: 0 0 130px;
+        font-style: italic;
+        color: #888;
+      }
+      ul li a:visited {
+        color: #8e32dc;
+      } */
+    </style>
+  </head>
+  <body>
+    <Header />
+
+    <main>
+      <!-- blog page slider start  -->
+      <section class="hero-area-slider py-10">
+        <div class="container">
+          <div
+            class="flex flex-col justify-center items-center gap-10 lg:flex-row lg:gap-6"
+          >
+            <!-- left content start  -->
+            <div class="left-content w-6/12 mr-8">
+              <p class="text-gray-400 text-base">March 05, 2022</p>
+              <h1 class="text-4xl font-bold mt-4 mb-6">
+                Trending items of themeforest 2022 is list heree
+              </h1>
+              <p class="text-base text-gray-400 mb-8">
+                ay to install the theme is to fork it using GitHub. Check the
+                README ay to install the theme is to fork it using GitHub. Check
+                the READMEay to install the theme
+              </p>
+              <button class="font-bold">Read More</button>
+            </div>
+            <!-- left content end -->
+
+            <!-- right content start  -->
+            <div class="right-content w-6/12">
+              <img
+                src="https://images.unsplash.com/photo-1661961110218-35af7210f803?ixlib=rb-1.2.1&ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80"
+                alt=""
+              />
+            </div>
+            <!-- right content end -->
+          </div>
+        </div>
+      </section>
+      <!-- blog page slider end  -->
+
+      <!-- blogs start  -->
+      <section class="">
+        <div class="container">
+          <div class="grid grid-cols-4 gap-6">
+            <!-- single blog start  -->
+            {
+              posts.map((post) => (
+                <div class="single-blog border border-gray-400 transition-all overflow-hidden hover:border-gray-600 rounded-lg">
+                  <a href={post.url}>
+                    <img src={heroImage} alt="" />
+                  </a>
+                  <div class="py-8 px-4">
+                    <p class="text-gray-400 text-base">
+                      <time datetime={post.frontmatter.pubDate}>
+                        {new Date(post.frontmatter.pubDate).toLocaleDateString(
+                          "en-us",
+                          {
+                            year: "numeric",
+                            month: "short",
+                            day: "numeric",
+                          }
+                        )}
+                      </time>
+                    </p>
+                    <h1 class="text-2xl font-bold mt-4 mb-6">
+                      <a href={post.url}>{post.frontmatter.title}</a>{" "}
+                    </h1>
+                    <p class="text-base text-gray-400 mb-8">
+                      ay to install the theme is to fork it using GitHub. Check
+                      the README ay to install the theme is to fork it using
+                      GitHub. Check the READMEay to install the theme
+                    </p>
+                    <a href={post.url} class="font-bold">
+                      Read More
+                    </a>
+                  </div>
+                </div>
+              ))
+            }
+            <!-- single blog end -->
+          </div>
+        </div>
+      </section>
+      <!-- blogs end -->
+    </main>
+    <Footer />
+  </body>
 </html>
