@@ -2,6 +2,16 @@
 article img {
   width: 100%;
 }
+.blog-content h1,
+.blog-content h2,
+.blog-content h3,
+.blog-content h4,
+.blog-content h5,
+.blog-content h6 {
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
 .blog-content h1 {
   font-size: 42px;
   font-weight: 700;
