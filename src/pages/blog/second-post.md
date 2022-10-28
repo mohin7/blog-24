@@ -2,8 +2,9 @@
 layout: "../../layouts/BlogPost.astro"
 title: "Second post"
 description: "Lorem ipsum dolor sit amet"
+author: Mohin Uddin
 pubDate: "Jul 22 2022"
-heroImage: "/placeholder-hero.jpg"
+heroImage: "https://images.unsplash.com/photo-1541710429488-c0d341efde3a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTl8fG1hcmslMjBkb3dufGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=800&q=60"
 ---
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Vitae ultricies leo integer malesuada nunc vel risus commodo viverra. Adipiscing enim eu turpis egestas pretium. Euismod elementum nisi quis eleifend quam adipiscing. In hac habitasse platea dictumst vestibulum. Sagittis purus sit amet volutpat. Netus et malesuada fames ac turpis egestas. Eget magna fermentum iaculis eu non diam phasellus vestibulum lorem. Varius sit amet mattis vulputate enim. Habitasse platea dictumst quisque sagittis. Integer quis auctor elit sed vulputate mi. Dictumst quisque sagittis purus sit amet.

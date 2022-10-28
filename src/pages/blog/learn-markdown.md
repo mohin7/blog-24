@@ -2,8 +2,9 @@
 layout: "../../layouts/BlogPost.astro"
 title: "Markdown Style Guide"
 description: "Here is a sample of some basic Markdown syntax that can be used when writing Markdown content in Astro."
+author: Mohin Uddin
 pubDate: "Jul 01 2022"
-heroImage: "https://images.unsplash.com/photo-1532258268896-846fa0198820?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTV8fG1hcmslMjBkb3dufGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=800&q=60"
+heroImage: "https://images.unsplash.com/photo-1666845253506-b6f1495eb192?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw4fHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=800&q=60"
 ---
 
 Here is a sample of some basic Markdown syntax that can be used when writing Markdown content in Astro.
