@@ -5,6 +5,10 @@ description: "এই ব্লগে আমি গিট এবং গিটহ�
 author: Mohin Uddin
 pubDate: "Jul 01 2022"
 heroImage: "https://images.unsplash.com/photo-1618401479427-c8ef9465fbe1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1686&q=80"
+tags:
+  tag1: "Hello tag1"
+  tag2: "Hello tag2"
+  tag3: "Hello tag3"
 ---
 
 ## গিট কি করে?

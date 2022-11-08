@@ -2,7 +2,7 @@
 import BaseHead from "../components/BaseHead.astro";
 import Footer from "../components/Footer.astro";
 import Header from "../components/Header.astro";
-import { SITE_DESCRIPTION,SITE_TITLE } from "../config";
+import { SITE_DESCRIPTION, SITE_TITLE } from "../config";
 
 // Use Astro.glob() to fetch all posts, and then sort them by date.
 const posts = (await Astro.glob("./blog/**/*.md")).sort(
@@ -17,7 +17,7 @@ const posts = (await Astro.glob("./blog/**/*.md")).sort(
   <head>
     <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
     <style lang="scss">
-      
+
     </style>
   </head>
   <body>
@@ -27,9 +27,9 @@ const posts = (await Astro.glob("./blog/**/*.md")).sort(
       <!-- blogs start  -->
       <section class="blogs">
         <div class="container">
-
-         
-          <div class="columns-1 md:columns-3 lg:columns-3 xl:columns-3 2xl:columns-4">
+          <div
+            class="columns-1 md:columns-3 lg:columns-3 xl:columns-3 2xl:columns-4"
+          >
             <!-- single blog start  -->
             {
               posts.map((post) => (
@@ -38,10 +38,12 @@ const posts = (await Astro.glob("./blog/**/*.md")).sort(
                     <img src={post.frontmatter.heroImage} alt="" />
                   </div>
                   <div class="tags">
-                
-                      <a href="#" class="text-xs inline-flex items-center font-regular leading-sm uppercase px-3 py-1 bg-green-200 text-green-700 rounded-full">
-                     tag</a>
-                   
+                    <a
+                      href="#"
+                      class="text-xs inline-flex items-center font-regular leading-sm uppercase px-3 py-1 bg-green-200 text-green-700 rounded-full"
+                    >
+                      SUCCESS
+                    </a>
                   </div>
                   <div class="py-4">
                     <h1 class="text-2xl font-medium mb-2">
@@ -54,18 +56,21 @@ const posts = (await Astro.glob("./blog/**/*.md")).sort(
                     </p>
 
                     <div class="flex items-center ">
-                      {post.frontmatter.author ?
-                      <div class="author flex items-center">
-                        <img
-                          src="https://hally-hugo.netlify.app/images/01.jpg"
-                          alt=""
-                          class="rounded-full w-5 h-5 mr-2"
-                        />{" "}
-                       <span class="text-xs"> {post.frontmatter.author}</span>
-                      </div>
-                      :
-                      <p class="text-xs">No Author</p>
-                      }
+                      {post.frontmatter.author ? (
+                        <div class="author flex items-center">
+                          <img
+                            src="https://hally-hugo.netlify.app/images/01.jpg"
+                            alt=""
+                            class="rounded-full w-5 h-5 mr-2"
+                          />{" "}
+                          <span class="text-xs">
+                            {" "}
+                            {post.frontmatter.author}
+                          </span>
+                        </div>
+                      ) : (
+                        <p class="text-xs">No Author</p>
+                      )}
                       <div class="date text-xs ml-4">
                         <time datetime={post.frontmatter.pubDate}>
                           {new Date(
